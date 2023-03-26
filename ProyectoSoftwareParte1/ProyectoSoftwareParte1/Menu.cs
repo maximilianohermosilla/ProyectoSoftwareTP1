@@ -54,7 +54,7 @@ namespace ProyectoSoftwareParte1
             string opcionMercaderia = "0";
             string opcionAgregar = "0";
             bool agregarProductos = true;
-            int id;
+            int inputInt;
 
             //AGREGO PRODUCTOS
             try
@@ -70,61 +70,62 @@ namespace ProyectoSoftwareParte1
                     }
 
                     Console.Write("\r\nOpción: ");
-                    opcionTipoMercaderia = Console.ReadLine();
-                    bool validParse = int.TryParse(opcionTipoMercaderia, out id);
-                    if (validParse)
+                    opcionTipoMercaderia = Console.ReadLine();                    
+
+                    if (int.TryParse(opcionTipoMercaderia, out inputInt))
                     {
-                        listaMercaderia = MercaderiaController.GetAllByType(int.Parse(opcionTipoMercaderia));
-                    }
-                    else
-                    {
-                        Console.WriteLine("Opción incorrecta");
-                        break;
-                    }
+                        listaMercaderia = MercaderiaController.GetAllByType(inputInt);
 
-                    //SELECCIONO PRODUCTOS DE LA CATEGORIA SELECCIONADA
-                    MenuCabecera("PRODUCTOS");
+                        //SELECCIONO PRODUCTOS DE LA CATEGORIA SELECCIONADA
+                        MenuCabecera("PRODUCTOS");
 
-                    foreach (var item in listaMercaderia)
-                    {
-                        Console.WriteLine(item.MercaderiaId + ") " + item.Nombre);
-                    }
-
-                    Console.Write("\r\nOpción: ");
-                    opcionMercaderia = Console.ReadLine();
-
-                    Mercaderia producto = listaMercaderia.Where(x => x.MercaderiaId == Int32.Parse(opcionMercaderia)).FirstOrDefault();
-
-                    Console.Write("\r\nCantidad: ");
-                    int opcionCantidad = int.Parse(Console.ReadLine());
-
-                    Console.Clear();
-                    Console.WriteLine("PROYECTO SOFTWARE - TRABAJO PRACTICO PARTE 1");
-                    Console.WriteLine("--------------------------------------------\n");
-
-                    //SI EL PRODUCTO EXISTE Y LA CANTIDAD ES VALIDA, AGREGO AL CARRO
-                    if (producto != null && opcionCantidad > 0)
-                    {
-                        for (int i = 0; i < opcionCantidad; i++)
+                        foreach (var item in listaMercaderia)
                         {
-                            listaProductosPedido.Add(producto);
+                            Console.WriteLine(item.MercaderiaId + ") " + item.Nombre);
                         }
-                        Console.WriteLine(@"¡Producto {0} agregado correctamente!{1}", producto.Nombre, "\n");
-                        Thread.Sleep(1000);
-                    }
-                    else
-                    {
-                        Console.WriteLine("No se pudo agregar el producto\n");
-                        Thread.Sleep(1000);
-                    }
 
-                    //DECIDO CONTINUAR AGREGANDO PRODUCTOS O SALIR
-                    Console.WriteLine("¿Desea continuar agregando productos?");
-                    Console.WriteLine("1) Si");
-                    Console.WriteLine("2) No");
-                    Console.Write("\r\nOpción: ");
-                    opcionAgregar = Console.ReadLine();
-                    agregarProductos = opcionAgregar != "2";
+                        Console.Write("\r\nOpción: ");
+                        opcionMercaderia = Console.ReadLine();
+
+                        if (int.TryParse(opcionMercaderia, out inputInt))
+                        {
+                            Mercaderia producto = listaMercaderia.Where(x => x.MercaderiaId == inputInt).FirstOrDefault();
+
+                            Console.Write("\r\nCantidad: ");
+                            string opcionCantidad = Console.ReadLine();
+                            int.TryParse(opcionCantidad, out inputInt);
+                            int cantidad = inputInt;
+
+                            Console.Clear();
+                            Console.WriteLine("PROYECTO SOFTWARE - TRABAJO PRACTICO PARTE 1");
+                            Console.WriteLine("--------------------------------------------\n");
+
+                            //SI EL PRODUCTO EXISTE Y LA CANTIDAD ES VALIDA, AGREGO AL CARRO
+                            if (producto != null && cantidad > 0)
+                            {
+                                for (int i = 0; i < cantidad; i++)
+                                {
+                                    listaProductosPedido.Add(producto);
+                                }
+                                Console.WriteLine(@"¡Producto {0} agregado correctamente!{1}", producto.Nombre, "\n");
+                                Thread.Sleep(1000);
+                            }
+                            else
+                            {
+                                Console.WriteLine("No se pudo agregar el producto\n");
+                                Thread.Sleep(1000);
+                            }
+
+                            //DECIDO CONTINUAR AGREGANDO PRODUCTOS O SALIR
+                            Console.WriteLine("¿Desea continuar agregando productos?");
+                            Console.WriteLine("1) Si");
+                            Console.WriteLine("2) No");
+                            Console.Write("\r\nOpción: ");
+                            opcionAgregar = Console.ReadLine();
+                            agregarProductos = opcionAgregar != "2";
+                        }
+                    }
+                    
                 } while (agregarProductos);
 
                 FormaEntrega formaEntrega = MenuFormasEntrega();
@@ -137,6 +138,7 @@ namespace ProyectoSoftwareParte1
                 throw;
             }
         }
+
         public static void MenuCabecera(string titulo)
         {
             Console.Clear();
@@ -150,7 +152,8 @@ namespace ProyectoSoftwareParte1
         {
             FormaEntrega formaEntrega;
             string opcionFormaEntrega = "0";
-            bool formaEntregaCorrecta = false;            
+            bool formaEntregaCorrecta = false;
+            int opcionSeleccionada;
             do
             {
                 MenuCabecera("FORMA DE ENTREGA");
@@ -161,8 +164,9 @@ namespace ProyectoSoftwareParte1
 
                 Console.Write("\r\nOpción: ");
                 opcionFormaEntrega = Console.ReadLine();
+                int.TryParse(opcionFormaEntrega, out opcionSeleccionada);
 
-                formaEntrega = formasEntrega.Where(x => x.FormaEntregaId == Int32.Parse(opcionFormaEntrega)).FirstOrDefault();
+                formaEntrega = formasEntrega.Where(x => x.FormaEntregaId == opcionSeleccionada).FirstOrDefault();
                 formaEntregaCorrecta = formaEntrega != null;
             } while (!formaEntregaCorrecta);
 
@@ -172,6 +176,8 @@ namespace ProyectoSoftwareParte1
         public static void ConfirmacionPedido(List<Mercaderia> listaProductosPedido, FormaEntrega formaEntrega)
         {
             int precioFinal = 0;
+            Console.Clear();
+            Console.WriteLine("PEDIDO CONFIRMADO \n");
             foreach (var item in listaProductosPedido)
             {
                 Console.WriteLine(item.Nombre + " $" + item.Precio);
@@ -179,6 +185,7 @@ namespace ProyectoSoftwareParte1
             }
             Console.WriteLine(@"TOTAL = ${0}", precioFinal);
             Console.WriteLine(@"Forma de entrega: {0}", formaEntrega.Descripcion);
+            Console.WriteLine("\nPresione una tecla para continuar...");
 
             ComandaController.NuevaComanda(listaProductosPedido, formaEntrega, precioFinal);
 
@@ -189,9 +196,11 @@ namespace ProyectoSoftwareParte1
         {
             Console.Clear();
             List<ComandaDTO> listaComandas = ComandaController.GetAll();
+            Console.WriteLine("LISTA DE COMANDAS");
 
             foreach (var item in listaComandas)
             {
+                Console.WriteLine("\n---------------------------------------------");
                 Console.WriteLine(@"Comanda: {0}", item.ComandaId);
                 Console.WriteLine("---------------------------------------------");
 
