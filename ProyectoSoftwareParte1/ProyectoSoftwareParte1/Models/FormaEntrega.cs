@@ -8,11 +8,9 @@ using System.Threading.Tasks;
 
 namespace ProyectoSoftwareParte1.Models
 {
-    [Table("FormaEntrega")]
     public class FormaEntrega
     {
-        public int FormaEntregaId { get; set; }
-        [StringLength(maximumLength: 50)]
+        public int FormaEntregaId { get; set; }        
         public string Descripcion { get; set; }
     }
 }

@@ -25,6 +25,20 @@ namespace ProyectoSoftwareParte1.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Comanda>().ToTable("Comanda");
+            modelBuilder.Entity<ComandaMercaderia>().ToTable("ComandaMercaderia");
+            modelBuilder.Entity<FormaEntrega>().ToTable("FormaEntrega");
+            modelBuilder.Entity<Mercaderia>().ToTable("Mercaderia");
+            modelBuilder.Entity<TipoMercaderia>().ToTable("TipoMercaderia");
+            
+            modelBuilder.Entity<Comanda>().Property(x => x.Fecha).HasColumnType("Date");
+            modelBuilder.Entity<FormaEntrega>().Property(x => x.Descripcion).HasMaxLength(50);
+            modelBuilder.Entity<Mercaderia>().Property(x => x.Nombre).HasMaxLength(50);
+            modelBuilder.Entity<Mercaderia>().Property(x => x.Ingredientes).HasMaxLength(255);
+            modelBuilder.Entity<Mercaderia>().Property(x => x.Preparacion).HasMaxLength(255);
+            modelBuilder.Entity<Mercaderia>().Property(x => x.Imagen).HasMaxLength(255);
+            modelBuilder.Entity<TipoMercaderia>().Property(x => x.Descripcion).HasMaxLength(50);
+
             modelBuilder.Entity<TipoMercaderia>().HasData(
                 new TipoMercaderia { TipoMercaderiaId = 1, Descripcion = "Entrada" },
                 new TipoMercaderia { TipoMercaderiaId = 2, Descripcion = "Minutas" },

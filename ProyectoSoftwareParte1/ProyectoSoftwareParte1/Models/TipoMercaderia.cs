@@ -7,12 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ProyectoSoftwareParte1.Models
-{
-    [Table("TipoMercaderia")]
+{    
     public class TipoMercaderia
     {
-        public int TipoMercaderiaId { get; set; }
-        [StringLength(maximumLength: 50)]
+        public int TipoMercaderiaId { get; set; }        
         public string Descripcion { get; set; }
     }
 }

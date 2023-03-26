@@ -39,7 +39,9 @@ namespace ProyectoSoftwareParte1.Migrations
 
                     b.HasKey("ComandaId");
 
-                    b.ToTable("Comanda");
+                    b.HasIndex("FormaEntregaId");
+
+                    b.ToTable("Comanda", (string)null);
                 });
 
             modelBuilder.Entity("ProyectoSoftwareParte1.Models.ComandaMercaderia", b =>
@@ -58,7 +60,11 @@ namespace ProyectoSoftwareParte1.Migrations
 
                     b.HasKey("ComandaMercaderiaId");
 
-                    b.ToTable("ComandaMercaderia");
+                    b.HasIndex("ComandaId");
+
+                    b.HasIndex("MercaderiaId");
+
+                    b.ToTable("ComandaMercaderia", (string)null);
                 });
 
             modelBuilder.Entity("ProyectoSoftwareParte1.Models.FormaEntrega", b =>
@@ -76,7 +82,7 @@ namespace ProyectoSoftwareParte1.Migrations
 
                     b.HasKey("FormaEntregaId");
 
-                    b.ToTable("FormaEntrega");
+                    b.ToTable("FormaEntrega", (string)null);
 
                     b.HasData(
                         new
@@ -116,7 +122,8 @@ namespace ProyectoSoftwareParte1.Migrations
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("Precio")
                         .HasColumnType("int");
@@ -131,7 +138,9 @@ namespace ProyectoSoftwareParte1.Migrations
 
                     b.HasKey("MercaderiaId");
 
-                    b.ToTable("Mercaderia");
+                    b.HasIndex("TipoMercaderiaId");
+
+                    b.ToTable("Mercaderia", (string)null);
 
                     b.HasData(
                         new
@@ -351,7 +360,7 @@ namespace ProyectoSoftwareParte1.Migrations
 
                     b.HasKey("TipoMercaderiaId");
 
-                    b.ToTable("TipoMercaderia");
+                    b.ToTable("TipoMercaderia", (string)null);
 
                     b.HasData(
                         new
@@ -404,6 +413,47 @@ namespace ProyectoSoftwareParte1.Migrations
                             TipoMercaderiaId = 10,
                             Descripcion = "Postres"
                         });
+                });
+
+            modelBuilder.Entity("ProyectoSoftwareParte1.Models.Comanda", b =>
+                {
+                    b.HasOne("ProyectoSoftwareParte1.Models.FormaEntrega", "FormaEntregaNavigator")
+                        .WithMany()
+                        .HasForeignKey("FormaEntregaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("FormaEntregaNavigator");
+                });
+
+            modelBuilder.Entity("ProyectoSoftwareParte1.Models.ComandaMercaderia", b =>
+                {
+                    b.HasOne("ProyectoSoftwareParte1.Models.Comanda", "ComandaNavigation")
+                        .WithMany()
+                        .HasForeignKey("ComandaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProyectoSoftwareParte1.Models.Mercaderia", "MercaderiaNavigation")
+                        .WithMany()
+                        .HasForeignKey("MercaderiaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ComandaNavigation");
+
+                    b.Navigation("MercaderiaNavigation");
+                });
+
+            modelBuilder.Entity("ProyectoSoftwareParte1.Models.Mercaderia", b =>
+                {
+                    b.HasOne("ProyectoSoftwareParte1.Models.TipoMercaderia", "TipoMercaderiaNavigation")
+                        .WithMany()
+                        .HasForeignKey("TipoMercaderiaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TipoMercaderiaNavigation");
                 });
 #pragma warning restore 612, 618
         }

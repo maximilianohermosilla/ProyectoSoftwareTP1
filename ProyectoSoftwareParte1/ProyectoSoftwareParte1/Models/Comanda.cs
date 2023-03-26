@@ -9,14 +9,13 @@ using System.Threading.Tasks;
 
 namespace ProyectoSoftwareParte1.Models
 {
-    [Table("Comanda")]
     public class Comanda
     {
         public Guid ComandaId { get; set; }
         public int FormaEntregaId { get; set; }
-        public int PrecioTotal { get; set; }
-        [DataType(DataType.Date)]
-        [Column(TypeName = "Date")]
+        public int PrecioTotal { get; set; }        
         public DateTime Fecha { get; set; }
+
+        public virtual FormaEntrega FormaEntregaNavigator { get; set;}
     }
 }
