@@ -12,8 +12,8 @@ namespace ProyectoSoftwareParte1.Controllers
         public static List<Mercaderia> GetAllByType(int tipoMercaderia)
         {
             using (var context = new ProyectoSoftwareContext())
-            {
-                List<Mercaderia> lista = (from table in context.Mercaderias where table.TipoMercaderiaId == tipoMercaderia select table).ToList();                
+            {                
+                List<Mercaderia> lista = context.Mercaderias.Where(m => m.TipoMercaderiaId == tipoMercaderia).ToList();
 
                 return lista;
             }
