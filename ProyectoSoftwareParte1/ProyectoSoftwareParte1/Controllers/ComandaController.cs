@@ -45,7 +45,7 @@ namespace ProyectoSoftwareParte1.Controllers
                 foreach (var item in lista)
                 {
                     ComandaDTO comandaDTO = new ComandaDTO(item);
-                    comandaDTO.FormaEntrega = (from table in context.FormasEntrega where table.FormaEntregaId == item.FormaEntregaId select table.Descripcion).FirstOrDefault();
+                    comandaDTO.FormaEntrega = context.FormasEntrega.Where(f => f.FormaEntregaId == item.FormaEntregaId).Select(f => f.Descripcion).FirstOrDefault();
 
                     comandaDTO.ComandaMercaderia = (from m in context.Mercaderias
                                             join cm in context.ComandasMercaderia

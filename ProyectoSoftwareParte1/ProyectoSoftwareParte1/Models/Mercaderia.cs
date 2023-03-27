@@ -19,5 +19,6 @@ namespace ProyectoSoftwareParte1.Models
         public string Imagen { get; set; }
 
         public virtual TipoMercaderia TipoMercaderiaNavigation { get; set; }
+        public IList<ComandaMercaderia> ComandasMercaderia { get; set; }
     }
 }

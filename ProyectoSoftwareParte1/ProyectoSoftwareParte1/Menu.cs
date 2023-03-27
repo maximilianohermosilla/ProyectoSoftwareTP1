@@ -60,7 +60,7 @@ namespace ProyectoSoftwareParte1
             try
             {
                 do
-                {
+                {                    
                     //SELECCIONO TIPO DE MERCADERIA
                     MenuCabecera("TIPO DE MERCADERIA");
 
@@ -188,8 +188,8 @@ namespace ProyectoSoftwareParte1
             Console.WriteLine("\nPresione una tecla para continuar...");
 
             ComandaController.NuevaComanda(listaProductosPedido, formaEntrega, precioFinal);
-
             Console.ReadLine();
+            listaProductosPedido.Clear();
         }
 
         public static void MenuListaPedidos()

@@ -12,8 +12,8 @@ using ProyectoSoftwareParte1.Models;
 namespace ProyectoSoftwareParte1.Migrations
 {
     [DbContext(typeof(ProyectoSoftwareContext))]
-    [Migration("20230326022012_ProyectoSoftwareFluentAPI")]
-    partial class ProyectoSoftwareFluentAPI
+    [Migration("20230327010432_ProyectoSoftware")]
+    partial class ProyectoSoftware
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -420,25 +420,25 @@ namespace ProyectoSoftwareParte1.Migrations
 
             modelBuilder.Entity("ProyectoSoftwareParte1.Models.Comanda", b =>
                 {
-                    b.HasOne("ProyectoSoftwareParte1.Models.FormaEntrega", "FormaEntregaNavigator")
-                        .WithMany()
+                    b.HasOne("ProyectoSoftwareParte1.Models.FormaEntrega", "FormaEntregaNavigation")
+                        .WithMany("Comandas")
                         .HasForeignKey("FormaEntregaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("FormaEntregaNavigator");
+                    b.Navigation("FormaEntregaNavigation");
                 });
 
             modelBuilder.Entity("ProyectoSoftwareParte1.Models.ComandaMercaderia", b =>
                 {
                     b.HasOne("ProyectoSoftwareParte1.Models.Comanda", "ComandaNavigation")
-                        .WithMany()
+                        .WithMany("ComandasMercaderia")
                         .HasForeignKey("ComandaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ProyectoSoftwareParte1.Models.Mercaderia", "MercaderiaNavigation")
-                        .WithMany()
+                        .WithMany("ComandasMercaderia")
                         .HasForeignKey("MercaderiaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -451,12 +451,32 @@ namespace ProyectoSoftwareParte1.Migrations
             modelBuilder.Entity("ProyectoSoftwareParte1.Models.Mercaderia", b =>
                 {
                     b.HasOne("ProyectoSoftwareParte1.Models.TipoMercaderia", "TipoMercaderiaNavigation")
-                        .WithMany()
+                        .WithMany("Mercaderias")
                         .HasForeignKey("TipoMercaderiaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("TipoMercaderiaNavigation");
+                });
+
+            modelBuilder.Entity("ProyectoSoftwareParte1.Models.Comanda", b =>
+                {
+                    b.Navigation("ComandasMercaderia");
+                });
+
+            modelBuilder.Entity("ProyectoSoftwareParte1.Models.FormaEntrega", b =>
+                {
+                    b.Navigation("Comandas");
+                });
+
+            modelBuilder.Entity("ProyectoSoftwareParte1.Models.Mercaderia", b =>
+                {
+                    b.Navigation("ComandasMercaderia");
+                });
+
+            modelBuilder.Entity("ProyectoSoftwareParte1.Models.TipoMercaderia", b =>
+                {
+                    b.Navigation("Mercaderias");
                 });
 #pragma warning restore 612, 618
         }

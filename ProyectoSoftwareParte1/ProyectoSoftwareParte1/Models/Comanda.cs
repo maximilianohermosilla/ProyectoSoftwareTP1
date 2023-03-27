@@ -16,6 +16,7 @@ namespace ProyectoSoftwareParte1.Models
         public int PrecioTotal { get; set; }        
         public DateTime Fecha { get; set; }
 
-        public virtual FormaEntrega FormaEntregaNavigator { get; set;}
+        public virtual FormaEntrega FormaEntregaNavigation { get; set;}
+        public IList<ComandaMercaderia> ComandasMercaderia { get; set; }
     }
 }

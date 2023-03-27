@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Reflection.Metadata;
@@ -25,10 +26,12 @@ namespace ProyectoSoftwareParte1.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Comanda>().ToTable("Comanda");
+            modelBuilder.Entity<Comanda>().ToTable("Comanda").HasOne<FormaEntrega>(s => s.FormaEntregaNavigation).WithMany(g => g.Comandas).HasForeignKey(s => s.FormaEntregaId);
             modelBuilder.Entity<ComandaMercaderia>().ToTable("ComandaMercaderia");
+            modelBuilder.Entity<ComandaMercaderia>().HasOne<Comanda>(s => s.ComandaNavigation).WithMany(g => g.ComandasMercaderia).HasForeignKey(s => s.ComandaId);
+            modelBuilder.Entity<ComandaMercaderia>().HasOne<Mercaderia>(s => s.MercaderiaNavigation).WithMany(g => g.ComandasMercaderia).HasForeignKey(s => s.MercaderiaId);
+            modelBuilder.Entity<Mercaderia>().ToTable("Mercaderia").HasOne<TipoMercaderia>(s => s.TipoMercaderiaNavigation).WithMany(g => g.Mercaderias).HasForeignKey(s => s.TipoMercaderiaId);
             modelBuilder.Entity<FormaEntrega>().ToTable("FormaEntrega");
-            modelBuilder.Entity<Mercaderia>().ToTable("Mercaderia");
             modelBuilder.Entity<TipoMercaderia>().ToTable("TipoMercaderia");
             
             modelBuilder.Entity<Comanda>().Property(x => x.Fecha).HasColumnType("Date");

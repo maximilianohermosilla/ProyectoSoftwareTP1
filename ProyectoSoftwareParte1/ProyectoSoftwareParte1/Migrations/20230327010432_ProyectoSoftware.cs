@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ProyectoSoftwareParte1.Migrations
 {
     /// <inheritdoc />
-    public partial class ProyectoSoftwareFluentAPI : Migration
+    public partial class ProyectoSoftware : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
