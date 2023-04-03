@@ -69,3 +69,5 @@ F:\GitHub\Net\ProyectoSoftware\ProyectoSoftwareParte1\ProyectoSoftwareParte1\Pro
 F:\GitHub\Net\ProyectoSoftware\ProyectoSoftwareParte1\ProyectoSoftwareParte1\ProyectoSoftwareParte1\obj\Debug\net6.0\ProyectoSoftwareParte1.pdb
 F:\GitHub\Net\ProyectoSoftware\ProyectoSoftwareParte1\ProyectoSoftwareParte1\ProyectoSoftwareParte1\obj\Debug\net6.0\ProyectoSoftwareParte1.genruntimeconfig.cache
 F:\GitHub\Net\ProyectoSoftware\ProyectoSoftwareParte1\ProyectoSoftwareParte1\ProyectoSoftwareParte1\obj\Debug\net6.0\ref\ProyectoSoftwareParte1.dll
+F:\GitHub\Net\ProyectoSoftware\ProyectoSoftwareParte1\ProyectoSoftwareParte1\ProyectoSoftwareParte1\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+F:\GitHub\Net\ProyectoSoftware\ProyectoSoftwareParte1\ProyectoSoftwareParte1\ProyectoSoftwareParte1\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll

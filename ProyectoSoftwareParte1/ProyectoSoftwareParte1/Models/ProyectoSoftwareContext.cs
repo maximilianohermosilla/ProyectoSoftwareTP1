@@ -1,16 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProyectoSoftwareParte1.Models
 {
-    public class ProyectoSoftwareContext: DbContext
+    public class ProyectoSoftwareContext : DbContext
     {
         public DbSet<Comanda> Comandas { get; set; }
         public DbSet<ComandaMercaderia> ComandasMercaderia { get; set; }
@@ -33,7 +25,7 @@ namespace ProyectoSoftwareParte1.Models
             modelBuilder.Entity<Mercaderia>().ToTable("Mercaderia").HasOne<TipoMercaderia>(s => s.TipoMercaderiaNavigation).WithMany(g => g.Mercaderias).HasForeignKey(s => s.TipoMercaderiaId);
             modelBuilder.Entity<FormaEntrega>().ToTable("FormaEntrega");
             modelBuilder.Entity<TipoMercaderia>().ToTable("TipoMercaderia");
-            
+
             modelBuilder.Entity<Comanda>().Property(x => x.Fecha).HasColumnType("Date");
             modelBuilder.Entity<FormaEntrega>().Property(x => x.Descripcion).HasMaxLength(50);
             modelBuilder.Entity<Mercaderia>().Property(x => x.Nombre).HasMaxLength(50);
@@ -52,7 +44,7 @@ namespace ProyectoSoftwareParte1.Models
                 new TipoMercaderia { TipoMercaderiaId = 7, Descripcion = "Ensaladas" },
                 new TipoMercaderia { TipoMercaderiaId = 8, Descripcion = "Bebidas" },
                 new TipoMercaderia { TipoMercaderiaId = 9, Descripcion = "Cerveza Artesanal" },
-                new TipoMercaderia { TipoMercaderiaId = 10, Descripcion = "Postres" }            
+                new TipoMercaderia { TipoMercaderiaId = 10, Descripcion = "Postres" }
             );
 
             modelBuilder.Entity<FormaEntrega>().HasData(

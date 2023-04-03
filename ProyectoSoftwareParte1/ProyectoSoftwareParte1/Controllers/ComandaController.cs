@@ -1,12 +1,5 @@
-﻿using Microsoft.Identity.Client;
-using ProyectoSoftwareParte1.DTO;
+﻿using ProyectoSoftwareParte1.DTO;
 using ProyectoSoftwareParte1.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProyectoSoftwareParte1.Controllers
 {
@@ -48,14 +41,12 @@ namespace ProyectoSoftwareParte1.Controllers
                     comandaDTO.FormaEntrega = context.FormasEntrega.Where(f => f.FormaEntregaId == item.FormaEntregaId).Select(f => f.Descripcion).FirstOrDefault();
 
                     comandaDTO.ComandaMercaderia = (from m in context.Mercaderias
-                                            join cm in context.ComandasMercaderia
-                                            on m.MercaderiaId equals cm.MercaderiaId
-                                            join tm in context.TiposMercaderia
-                                            on m.TipoMercaderiaId equals tm.TipoMercaderiaId
-                                            where cm.ComandaId == item.ComandaId
-                                            select new MercaderiaDTO(m, tm.Descripcion)).ToList();
-
-                    
+                                                    join cm in context.ComandasMercaderia
+                                                    on m.MercaderiaId equals cm.MercaderiaId
+                                                    join tm in context.TiposMercaderia
+                                                    on m.TipoMercaderiaId equals tm.TipoMercaderiaId
+                                                    where cm.ComandaId == item.ComandaId
+                                                    select new MercaderiaDTO(m, tm.Descripcion)).ToList();
 
                     listaDTO.Add(comandaDTO);
                 }

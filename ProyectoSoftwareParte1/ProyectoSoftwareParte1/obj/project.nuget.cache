@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "daMxXvnnBLBEfs15c8ThIwcg7tWvDBmZWRLE5scBRjIGzKAKCsHKbCIl38X/huU7Wvn+QHfjM5nhnxJaG1iwUw==",
+  "dgSpecHash": "n3t8h4wYWLAZxTVIRIw1DcO2V+dCu8If+MEpWHPmx3B8LKAiQXWvuNAtR8ZsKaMFCtCA6uy41tqILGM+K7FYIQ==",
   "success": true,
   "projectFilePath": "F:\\GitHub\\Net\\ProyectoSoftware\\ProyectoSoftwareParte1\\ProyectoSoftwareParte1\\ProyectoSoftwareParte1\\ProyectoSoftwareParte1.csproj",
   "expectedPackageFiles": [
@@ -24,6 +24,8 @@
     "C:\\Users\\maxim\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\maxim\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\maxim\\.nuget\\packages\\microsoft.extensions.dependencymodel\\7.0.0\\microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512",
+    "C:\\Users\\maxim\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0\\microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\maxim\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\7.0.0\\microsoft.extensions.hosting.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\maxim\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "C:\\Users\\maxim\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\maxim\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
