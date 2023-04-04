@@ -1,6 +1,6 @@
-﻿using ProyectoSoftwareParte1.Models;
+﻿using ProyectoSoftware.Domain.Models;
 
-namespace ProyectoSoftwareParte1.DTO
+namespace ProyectoSoftware.Domain.DTO
 {
     public class ComandaDTO
     {

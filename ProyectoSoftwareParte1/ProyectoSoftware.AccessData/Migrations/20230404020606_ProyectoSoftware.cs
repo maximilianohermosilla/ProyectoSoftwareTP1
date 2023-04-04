@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace ProyectoSoftwareParte1.Migrations
+namespace ProyectoSoftware.AccessData.Migrations
 {
     /// <inheritdoc />
     public partial class ProyectoSoftware : Migration

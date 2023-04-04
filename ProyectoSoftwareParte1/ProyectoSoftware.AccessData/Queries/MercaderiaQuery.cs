@@ -1,8 +1,8 @@
-﻿using ProyectoSoftwareParte1.Models;
+﻿using ProyectoSoftware.Domain.Models;
 
-namespace ProyectoSoftwareParte1.Controllers
+namespace ProyectoSoftware.AccessData.Queries
 {
-    public class MercaderiaController
+    public class MercaderiaQuery
     {
         public static List<Mercaderia> GetAllByType(int tipoMercaderia)
         {

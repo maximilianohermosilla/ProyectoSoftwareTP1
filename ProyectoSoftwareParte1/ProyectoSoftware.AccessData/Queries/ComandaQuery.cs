@@ -1,33 +1,10 @@
-﻿using ProyectoSoftwareParte1.DTO;
-using ProyectoSoftwareParte1.Models;
+﻿using ProyectoSoftware.Domain.DTO;
+using ProyectoSoftware.Domain.Models;
 
-namespace ProyectoSoftwareParte1.Controllers
+namespace ProyectoSoftware.AccessData.Queries
 {
-    public class ComandaController
+    public class ComandaQuery
     {
-        public static void NuevaComanda(List<Mercaderia> listaProductos, FormaEntrega formaEntrega, int precio)
-        {
-            Comanda comanda = new Comanda();
-            comanda.FormaEntregaId = formaEntrega.FormaEntregaId;
-            comanda.PrecioTotal = precio;
-            comanda.Fecha = DateTime.Now;
-
-            using (var context = new ProyectoSoftwareContext())
-            {
-                context.Add(comanda);
-                context.SaveChanges();
-
-                foreach (var item in listaProductos)
-                {
-                    ComandaMercaderia comandaMercaderia = new ComandaMercaderia();
-                    comandaMercaderia.MercaderiaId = item.MercaderiaId;
-                    comandaMercaderia.ComandaId = comanda.ComandaId;
-                    context.Add(comandaMercaderia);
-                    context.SaveChanges();
-                }
-            }
-        }
-
         public static List<ComandaDTO> GetAll()
         {
             using (var context = new ProyectoSoftwareContext())

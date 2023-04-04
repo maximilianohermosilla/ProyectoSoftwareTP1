@@ -1,13 +1,13 @@
-﻿using ProyectoSoftwareParte1.Controllers;
-using ProyectoSoftwareParte1.DTO;
-using ProyectoSoftwareParte1.Models;
+﻿using ProyectoSoftware.Application.Services;
+using ProyectoSoftware.Domain.DTO;
+using ProyectoSoftware.Domain.Models;
 
 namespace ProyectoSoftwareParte1
 {
     public class Menu
     {
-        public static List<TipoMercaderia> tiposMercaderia = TipoMercaderiaController.GetAll();
-        public static List<FormaEntrega> formasEntrega = FormaEntregaController.GetAll();
+        public static List<TipoMercaderia> tiposMercaderia = TipoMercaderiaService.GetAll();
+        public static List<FormaEntrega> formasEntrega = FormaEntregaService.GetAll();
         public static List<Mercaderia> listaMercaderia = new List<Mercaderia>();
         public static List<Mercaderia> listaProductosPedido = new List<Mercaderia>();
 
@@ -119,7 +119,7 @@ namespace ProyectoSoftwareParte1
         public static string MenuMercaderias(int tipoMercaderia)
         {
             string opcion = "";
-            listaMercaderia = MercaderiaController.GetAllByType(tipoMercaderia);
+            listaMercaderia = MercaderiaService.GetAllByType(tipoMercaderia);
             if (listaMercaderia.Count() > 0)
             {
                 MenuCabecera("PRODUCTOS", true);
@@ -209,7 +209,7 @@ namespace ProyectoSoftwareParte1
             Console.WriteLine(@"Forma de entrega: {0}", formaEntrega.Descripcion);
             Console.WriteLine("\nPresione una tecla para continuar...");
 
-            ComandaController.NuevaComanda(listaProductosPedido, formaEntrega, precioFinal);
+            ComandaService.Insert(listaProductosPedido, formaEntrega, precioFinal);
             Console.ReadLine();
             listaProductosPedido.Clear();
         }
@@ -217,12 +217,12 @@ namespace ProyectoSoftwareParte1
         public static void MenuListaPedidos()
         {
             Console.Clear();
-            List<ComandaDTO> listaComandas = ComandaController.GetAll();
+            List<ComandaDTO> listaComandas = ComandaService.GetAll();
             Console.WriteLine("LISTA DE COMANDAS");
 
             if(listaComandas.Count == 0)
             {
-                Console.WriteLine("No existen comandas ingresadas");
+                Console.WriteLine("\nNo existen comandas ingresadas");
             }
 
             foreach (var item in listaComandas)

@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ProyectoSoftwareParte1.Models;
+using ProyectoSoftware.AccessData;
 
 #nullable disable
 
-namespace ProyectoSoftwareParte1.Migrations
+namespace ProyectoSoftware.AccessData.Migrations
 {
     [DbContext(typeof(ProyectoSoftwareContext))]
-    partial class ProyectoSoftwareContextModelSnapshot : ModelSnapshot
+    [Migration("20230404020606_ProyectoSoftware")]
+    partial class ProyectoSoftware
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +25,7 @@ namespace ProyectoSoftwareParte1.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ProyectoSoftwareParte1.Models.Comanda", b =>
+            modelBuilder.Entity("ProyectoSoftware.Domain.Models.Comanda", b =>
                 {
                     b.Property<Guid>("ComandaId")
                         .ValueGeneratedOnAdd()
@@ -44,7 +47,7 @@ namespace ProyectoSoftwareParte1.Migrations
                     b.ToTable("Comanda", (string)null);
                 });
 
-            modelBuilder.Entity("ProyectoSoftwareParte1.Models.ComandaMercaderia", b =>
+            modelBuilder.Entity("ProyectoSoftware.Domain.Models.ComandaMercaderia", b =>
                 {
                     b.Property<int>("ComandaMercaderiaId")
                         .ValueGeneratedOnAdd()
@@ -67,7 +70,7 @@ namespace ProyectoSoftwareParte1.Migrations
                     b.ToTable("ComandaMercaderia", (string)null);
                 });
 
-            modelBuilder.Entity("ProyectoSoftwareParte1.Models.FormaEntrega", b =>
+            modelBuilder.Entity("ProyectoSoftware.Domain.Models.FormaEntrega", b =>
                 {
                     b.Property<int>("FormaEntregaId")
                         .ValueGeneratedOnAdd()
@@ -102,7 +105,7 @@ namespace ProyectoSoftwareParte1.Migrations
                         });
                 });
 
-            modelBuilder.Entity("ProyectoSoftwareParte1.Models.Mercaderia", b =>
+            modelBuilder.Entity("ProyectoSoftware.Domain.Models.Mercaderia", b =>
                 {
                     b.Property<int>("MercaderiaId")
                         .ValueGeneratedOnAdd()
@@ -345,7 +348,7 @@ namespace ProyectoSoftwareParte1.Migrations
                         });
                 });
 
-            modelBuilder.Entity("ProyectoSoftwareParte1.Models.TipoMercaderia", b =>
+            modelBuilder.Entity("ProyectoSoftware.Domain.Models.TipoMercaderia", b =>
                 {
                     b.Property<int>("TipoMercaderiaId")
                         .ValueGeneratedOnAdd()
@@ -415,9 +418,9 @@ namespace ProyectoSoftwareParte1.Migrations
                         });
                 });
 
-            modelBuilder.Entity("ProyectoSoftwareParte1.Models.Comanda", b =>
+            modelBuilder.Entity("ProyectoSoftware.Domain.Models.Comanda", b =>
                 {
-                    b.HasOne("ProyectoSoftwareParte1.Models.FormaEntrega", "FormaEntregaNavigation")
+                    b.HasOne("ProyectoSoftware.Domain.Models.FormaEntrega", "FormaEntregaNavigation")
                         .WithMany("Comandas")
                         .HasForeignKey("FormaEntregaId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -426,15 +429,15 @@ namespace ProyectoSoftwareParte1.Migrations
                     b.Navigation("FormaEntregaNavigation");
                 });
 
-            modelBuilder.Entity("ProyectoSoftwareParte1.Models.ComandaMercaderia", b =>
+            modelBuilder.Entity("ProyectoSoftware.Domain.Models.ComandaMercaderia", b =>
                 {
-                    b.HasOne("ProyectoSoftwareParte1.Models.Comanda", "ComandaNavigation")
+                    b.HasOne("ProyectoSoftware.Domain.Models.Comanda", "ComandaNavigation")
                         .WithMany("ComandasMercaderia")
                         .HasForeignKey("ComandaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProyectoSoftwareParte1.Models.Mercaderia", "MercaderiaNavigation")
+                    b.HasOne("ProyectoSoftware.Domain.Models.Mercaderia", "MercaderiaNavigation")
                         .WithMany("ComandasMercaderia")
                         .HasForeignKey("MercaderiaId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -445,9 +448,9 @@ namespace ProyectoSoftwareParte1.Migrations
                     b.Navigation("MercaderiaNavigation");
                 });
 
-            modelBuilder.Entity("ProyectoSoftwareParte1.Models.Mercaderia", b =>
+            modelBuilder.Entity("ProyectoSoftware.Domain.Models.Mercaderia", b =>
                 {
-                    b.HasOne("ProyectoSoftwareParte1.Models.TipoMercaderia", "TipoMercaderiaNavigation")
+                    b.HasOne("ProyectoSoftware.Domain.Models.TipoMercaderia", "TipoMercaderiaNavigation")
                         .WithMany("Mercaderias")
                         .HasForeignKey("TipoMercaderiaId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -456,22 +459,22 @@ namespace ProyectoSoftwareParte1.Migrations
                     b.Navigation("TipoMercaderiaNavigation");
                 });
 
-            modelBuilder.Entity("ProyectoSoftwareParte1.Models.Comanda", b =>
+            modelBuilder.Entity("ProyectoSoftware.Domain.Models.Comanda", b =>
                 {
                     b.Navigation("ComandasMercaderia");
                 });
 
-            modelBuilder.Entity("ProyectoSoftwareParte1.Models.FormaEntrega", b =>
+            modelBuilder.Entity("ProyectoSoftware.Domain.Models.FormaEntrega", b =>
                 {
                     b.Navigation("Comandas");
                 });
 
-            modelBuilder.Entity("ProyectoSoftwareParte1.Models.Mercaderia", b =>
+            modelBuilder.Entity("ProyectoSoftware.Domain.Models.Mercaderia", b =>
                 {
                     b.Navigation("ComandasMercaderia");
                 });
 
-            modelBuilder.Entity("ProyectoSoftwareParte1.Models.TipoMercaderia", b =>
+            modelBuilder.Entity("ProyectoSoftware.Domain.Models.TipoMercaderia", b =>
                 {
                     b.Navigation("Mercaderias");
                 });

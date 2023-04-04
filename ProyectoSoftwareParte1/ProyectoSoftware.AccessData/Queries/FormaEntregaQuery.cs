@@ -1,8 +1,8 @@
-﻿using ProyectoSoftwareParte1.Models;
+﻿using ProyectoSoftware.Domain.Models;
 
-namespace ProyectoSoftwareParte1.Controllers
+namespace ProyectoSoftware.AccessData.Queries
 {
-    public class FormaEntregaController
+    public class FormaEntregaQuery
     {
         public static List<FormaEntrega> GetAll()
         {

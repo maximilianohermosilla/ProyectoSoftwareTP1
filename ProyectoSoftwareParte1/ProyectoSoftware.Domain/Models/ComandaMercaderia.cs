@@ -1,4 +1,4 @@
-﻿namespace ProyectoSoftwareParte1.Models
+﻿namespace ProyectoSoftware.Domain.Models
 {
     public class ComandaMercaderia
     {
