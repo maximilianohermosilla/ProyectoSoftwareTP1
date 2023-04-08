@@ -146,167 +146,207 @@ namespace ProyectoSoftware.AccessData.Migrations
                         new
                         {
                             MercaderiaId = 1,
-                            Imagen = "",
+                            Imagen = "https://drive.google.com/file/d/1dP5O3M5hkZ_HkBuGnPqDIF7cc6omspoy/view",
                             Ingredientes = "Jamón y Queso",
-                            Nombre = "Empanada",
+                            Nombre = "Empanada Jamón y Queso",
                             Precio = 250,
-                            Preparacion = "Horno",
+                            Preparacion = "Extender la masa para empanadas. Rellenar con trozos de jamón y queso rallado. Luego cerrar la masa sobre el relleno y sellar los bordes con los dedos. Por último, colocarf las empanadas en el horno durante 15 o 20 minutos a 180°",
                             TipoMercaderiaId = 1
                         },
                         new
                         {
                             MercaderiaId = 2,
-                            Imagen = "",
-                            Ingredientes = "Papa, Cheddar",
-                            Nombre = "Papas fritas",
-                            Precio = 800,
-                            Preparacion = "Fritas",
-                            TipoMercaderiaId = 2
+                            Imagen = "https://drive.google.com/file/d/1HAsix1qgpinQNCYRTVMkupXSUO7h4Gd-/view",
+                            Ingredientes = "Carne, cebolla, morrón, huevo, salsa de tomate",
+                            Nombre = "Empanada Carne",
+                            Precio = 250,
+                            Preparacion = "Saltear cebolla y morrón en una sartén con aceite. Incorpororar carne picada, huevo cocido y salsa de tomate. Rellenar la masa con la preparación. Cerrar y sellar los bordes con los dedos. Colocar las empanadas en el horno durante 15 o 20 minutos a 180°",
+                            TipoMercaderiaId = 1
                         },
                         new
                         {
                             MercaderiaId = 3,
-                            Imagen = "",
-                            Ingredientes = "Jamón y Queso",
-                            Nombre = "Sorrentinos",
-                            Precio = 1100,
-                            Preparacion = "Hervir",
-                            TipoMercaderiaId = 3
+                            Imagen = "https://drive.google.com/file/d/1nXQuQ8YGwwcYlPZgyxTAdbbvqRYInXX2/view",
+                            Ingredientes = "Pollo, cebolla, morrón, huevo",
+                            Nombre = "Empanada Pollo",
+                            Precio = 250,
+                            Preparacion = "Saltear cebolla y morrón en una sartén con aceite. Incorpororar pollo trozado, huevo cocido y salsa de tomate. Rellenar la masa con la preparación. Cerrar y sellar los bordes con los dedos. Colocar las empanadas en el horno durante 15 minutos a 180°",
+                            TipoMercaderiaId = 1
                         },
                         new
                         {
                             MercaderiaId = 4,
-                            Imagen = "",
-                            Ingredientes = "Ricota",
-                            Nombre = "Ravioles",
-                            Precio = 1000,
-                            Preparacion = "Hervir",
-                            TipoMercaderiaId = 3
+                            Imagen = "https://drive.google.com/file/d/1-bqg5N6evDjhE94SnDSyIx2mwS7wBUyn/view",
+                            Ingredientes = "Papa, sal",
+                            Nombre = "Papas fritas",
+                            Precio = 800,
+                            Preparacion = "Cortar las papas en bastones. Precalentar una sartén con aceite y sumergir los bastones de papa hasta dorar",
+                            TipoMercaderiaId = 2
                         },
                         new
                         {
                             MercaderiaId = 5,
-                            Imagen = "",
-                            Ingredientes = "Papa, harina, manteca",
-                            Nombre = "Ñoquis",
-                            Precio = 1050,
-                            Preparacion = "Hervir",
-                            TipoMercaderiaId = 3
+                            Imagen = "https://drive.google.com/file/d/1wKPc99Dk9pRwdnB7Hez5l7yQhP-3Vcpf/view",
+                            Ingredientes = "Papa, sal, Queso cheddar",
+                            Nombre = "Papas fritas con cheddar",
+                            Precio = 950,
+                            Preparacion = "Cortar las papas en bastones. Precalentar una sartén con aceite y sumergir los bastones de papa hasta dorar. Mezcñar las papas con queso cheddar",
+                            TipoMercaderiaId = 2
                         },
                         new
                         {
                             MercaderiaId = 6,
-                            Imagen = "",
-                            Ingredientes = "Asado, vacío, chorizo, morcilla, riñon, molleja, entraña",
-                            Nombre = "Parrillada para 2",
-                            Precio = 3200,
-                            Preparacion = "Parrilla a leña",
-                            TipoMercaderiaId = 4
+                            Imagen = "https://drive.google.com/file/d/1Jc4rZ65jBg8BEabxlbUshoaUYbf-qHRu/view",
+                            Ingredientes = "Muzzarella, pan rallado",
+                            Nombre = "Bastones de muzzarella",
+                            Precio = 850,
+                            Preparacion = "Cortar trozos de queso muzzarella. Marinar y rebozar con pan rallado. Precalentar una sartén con aceite y sumergir los bastones hasta dorar",
+                            TipoMercaderiaId = 2
                         },
                         new
                         {
                             MercaderiaId = 7,
-                            Imagen = "",
-                            Ingredientes = "Matambre de cerdo, salsa de tomate, jamón, muzzarella",
-                            Nombre = "Matambre a la pizza",
-                            Precio = 2100,
-                            Preparacion = "Parrilla a leña",
-                            TipoMercaderiaId = 4
+                            Imagen = "https://drive.google.com/file/d/1bKbmpUGxozKYJOMnuXdRdpXom_Le13zI/view",
+                            Ingredientes = "Harina, Jamón y Queso",
+                            Nombre = "Sorrentinos",
+                            Precio = 1100,
+                            Preparacion = "Se cocinan de 5 a 6 minutos, fuego suave. Se echan en la olla, cuando el agua hierve. Salsa a elección ",
+                            TipoMercaderiaId = 3
                         },
                         new
                         {
                             MercaderiaId = 8,
-                            Imagen = "",
-                            Ingredientes = "Harina, levadura, salsa de tomate, muzzarella",
-                            Nombre = "Pizza Muzzarella",
-                            Precio = 1300,
-                            Preparacion = "Horno",
-                            TipoMercaderiaId = 5
+                            Imagen = "https://drive.google.com/file/d/1j0NjEwgzN2yf2cKwhEAFHXm5Ys37er2M/view",
+                            Ingredientes = "Harina, espinaca, ricota",
+                            Nombre = "Ravioles",
+                            Precio = 1000,
+                            Preparacion = "Se cocinan de 5 a 6 minutos, fuego suave. Se echan en la olla, cuando el agua hierve. Salsa a elección",
+                            TipoMercaderiaId = 3
                         },
                         new
                         {
                             MercaderiaId = 9,
-                            Imagen = "",
-                            Ingredientes = "Harina, levadura, salsa de tomate, muzzarella, jamón, morrón",
-                            Nombre = "Pizza Especial",
-                            Precio = 1500,
-                            Preparacion = "Horno",
-                            TipoMercaderiaId = 5
+                            Imagen = "https://drive.google.com/file/d/1y4NG5yqIR8D_WitrKMBqM6EWdx6H4p0a/view",
+                            Ingredientes = "Papa, harina, manteca",
+                            Nombre = "Ñoquis",
+                            Precio = 1050,
+                            Preparacion = "Se cocinan de 3 a 4 minutos, fuego suave. Se echan en la olla, cuando el agua hierve. Salsa a elección",
+                            TipoMercaderiaId = 3
                         },
                         new
                         {
                             MercaderiaId = 10,
-                            Imagen = "",
-                            Ingredientes = "Harina, levadura, salsa de tomate, muzzarella, tomate, orégano, ajo",
-                            Nombre = "Pizza Napolitana",
-                            Precio = 1500,
-                            Preparacion = "Horno",
-                            TipoMercaderiaId = 5
+                            Imagen = "https://drive.google.com/file/d/1mjjIjiRTI_WU9fzdJO3KDNKHywHCB8-o/view",
+                            Ingredientes = "Asado, vacío, chorizo, morcilla, riñon, molleja, entraña",
+                            Nombre = "Parrillada para 2",
+                            Precio = 3200,
+                            Preparacion = "Carne salada y desgrasada previo a la cocción. Fuego encendido en base a leña y carbón. Cocción en tiempo adecuado para cada corte",
+                            TipoMercaderiaId = 4
                         },
                         new
                         {
                             MercaderiaId = 11,
-                            Imagen = "",
-                            Ingredientes = "Milanesa de ternera, pan",
-                            Nombre = "Sandwich Milanesa Simple",
-                            Precio = 1000,
-                            Preparacion = "Frita",
-                            TipoMercaderiaId = 6
+                            Imagen = "https://drive.google.com/file/d/1G6D0pSscTwnvLyFpkt3UN7JfvIjwHFzt/view",
+                            Ingredientes = "Matambre de cerdo, salsa de tomate, cebolla, morrón, jamón, muzzarella",
+                            Nombre = "Matambre a la pizza",
+                            Precio = 2100,
+                            Preparacion = "Matambre de cerdo tiernizado previo a su cocción en la parrilla. Salsa preparada con cebolla y morrón salteados en pure de tomate. El matambre se sella en la parrilla de un lado, luego se da vuelta y se agregan la salsa y el queso",
+                            TipoMercaderiaId = 4
                         },
                         new
                         {
                             MercaderiaId = 12,
-                            Imagen = "",
-                            Ingredientes = "Milanesa de ternera, pan, lechuga, tomate, huevo",
-                            Nombre = "Sandwich Milanesa Completo",
+                            Imagen = "https://drive.google.com/file/d/1r2UJsC7elU9ypSs6qtGz1gJ2KhrvJXwI/view",
+                            Ingredientes = "Harina, aceite, levadura, salsa de tomate, muzzarella",
+                            Nombre = "Pizza Muzzarella",
                             Precio = 1300,
-                            Preparacion = "Frita",
-                            TipoMercaderiaId = 6
+                            Preparacion = "La masa se prepara con harina, aceite, levadura y agua. Luego de amasar, se deja reposar. Se separa la masa en porciones que serán estiradas para formar cada pizza. Se agrega salsa de tomate y muzzarella y se cocina en el horno",
+                            TipoMercaderiaId = 5
                         },
                         new
                         {
                             MercaderiaId = 13,
-                            Imagen = "",
-                            Ingredientes = "Hamburguesa, pan",
-                            Nombre = "Hamburguesa Simple",
-                            Precio = 750,
-                            Preparacion = "Plancha",
-                            TipoMercaderiaId = 6
+                            Imagen = "https://drive.google.com/file/d/1fLWpcDgcvOvuedhjH8xdcYgNN_sd9rB1/view",
+                            Ingredientes = "Harina, aceite, levadura, salsa de tomate, muzzarella, jamón, morrón",
+                            Nombre = "Pizza Especial",
+                            Precio = 1500,
+                            Preparacion = "La masa se prepara con harina, aceite, levadura y agua. Luego de amasar, se deja reposar. Se separa la masa en porciones que serán estiradas para formar cada pizza. Se agrega salsa de tomate, muzzarella, jamón y morrones y se cocina en el horno",
+                            TipoMercaderiaId = 5
                         },
                         new
                         {
                             MercaderiaId = 14,
-                            Imagen = "",
-                            Ingredientes = "Hamburguesa, , lechuga, tomate, jamón, queso, huevo",
-                            Nombre = "Hamburguesa Completa",
-                            Precio = 1000,
-                            Preparacion = "Plancha",
-                            TipoMercaderiaId = 6
+                            Imagen = "https://drive.google.com/file/d/1b8T3HsvPM0WNJ-N8k9J7I08yMXRGSiSS/view",
+                            Ingredientes = "Harina, aceite, levadura, salsa de tomate, muzzarella, tomate, orégano, ajo",
+                            Nombre = "Pizza Napolitana",
+                            Precio = 1500,
+                            Preparacion = "La masa se prepara con harina, aceite, levadura y agua. Luego de amasar, se deja reposar. Se separa la masa en porciones para formar cada pizza. Se agrega salsa de tomate, muzzarella, ajo tomate y orégano y se cocina en el horno",
+                            TipoMercaderiaId = 5
                         },
                         new
                         {
                             MercaderiaId = 15,
-                            Imagen = "",
-                            Ingredientes = "Lechuga, tomate, cebolla",
-                            Nombre = "Ensalada Simple",
-                            Precio = 600,
-                            Preparacion = "Ninguna",
-                            TipoMercaderiaId = 7
+                            Imagen = "https://drive.google.com/file/d/1uM26gOQHspyEWeS5KXlE6Ab4weCXybnU/view",
+                            Ingredientes = "Milanesa de ternera con perejil y ajo, pan",
+                            Nombre = "Sandwich Milanesa Simple",
+                            Precio = 1000,
+                            Preparacion = "La carne es marinada con huevos, perejil, ajo al menos 30 minutos. Es rebozada con pan rallado y se introduce en una sartén con aceite a 180°",
+                            TipoMercaderiaId = 6
                         },
                         new
                         {
                             MercaderiaId = 16,
-                            Imagen = "",
-                            Ingredientes = "Papa, zanahoria, arvejas, huevo",
-                            Nombre = "Ensalada Rusa",
-                            Precio = 700,
-                            Preparacion = "Hervir",
-                            TipoMercaderiaId = 7
+                            Imagen = "https://drive.google.com/file/d/1pVdf0j3VRW43ApQiM3hGBxm_w6EFpvbA/view",
+                            Ingredientes = "Milanesa de ternera con perejil y ajo, pan, lechuga, tomate, huevo, jamón, queso",
+                            Nombre = "Sandwich Milanesa Completo",
+                            Precio = 1300,
+                            Preparacion = "La carne es marinada con huevos, perejil, ajo al menos 30 minutos. Es rebozada con pan rallado y se introduce en una sartén con aceite a 180°. En el sandwicg se agrega lechuga, tomate, jamón, queso y un huevo frito",
+                            TipoMercaderiaId = 6
                         },
                         new
                         {
                             MercaderiaId = 17,
-                            Imagen = "",
+                            Imagen = "https://drive.google.com/file/d/16bcH3whOAZVZyGWa2Ju3Egw4TtidwvB4/view",
+                            Ingredientes = "Hamburguesa carne, ajo, perejil, huevo, leche, pan",
+                            Nombre = "Hamburguesa Simple",
+                            Precio = 750,
+                            Preparacion = "Se introduce la carne picada en un bol con ajo ý perejil picados, huevos, sal, pimienta y un poco de leche. Se agrega pan rallado y se mezcla. Luego se separan porciones para dar forma a cada hamburguesa que será cocinada en una plancha",
+                            TipoMercaderiaId = 6
+                        },
+                        new
+                        {
+                            MercaderiaId = 18,
+                            Imagen = "https://drive.google.com/file/d/1WrjYHDq8v6BDs6eVcxXfDLgeVtoU0pKF/view",
+                            Ingredientes = "Hamburguesa carne, lechuga, tomate, jamón, queso, huevo",
+                            Nombre = "Hamburguesa Completa",
+                            Precio = 1000,
+                            Preparacion = "Se introduce la carne picada en un bol con ajo ý perejil, huevos, sal, pimienta y leche. Se agrega pan rallado y se mezcla. Se separan porciones para dar forma a cada hamburguesa. Al sandwich se agrega lechuga, tomate, jamón, queso y huevo",
+                            TipoMercaderiaId = 6
+                        },
+                        new
+                        {
+                            MercaderiaId = 19,
+                            Imagen = "https://drive.google.com/file/d/1J906WVvVzkdbkGVIBGactSueFypvf8ss/view",
+                            Ingredientes = "Lechuga, tomate, cebolla",
+                            Nombre = "Ensalada Simple",
+                            Precio = 600,
+                            Preparacion = "Se corta la lechuga, el tomate y la cebolla y se mezclan los cortes en un bol. ",
+                            TipoMercaderiaId = 7
+                        },
+                        new
+                        {
+                            MercaderiaId = 20,
+                            Imagen = "https://drive.google.com/file/d/1Mcozjvh0SWZweQygiQrzOrZrT9YVjOLZ/view",
+                            Ingredientes = "Papa, zanahoria, arvejas, huevo, mayonesa",
+                            Nombre = "Ensalada Rusa",
+                            Precio = 700,
+                            Preparacion = "Las papas, la zanahoria y los huevos son hervidos previamente. La papa, los huevos y la zanahoria son cortadas en pequeñas porciones y se agregan arvejas y mayonesa para mezclar todo posteriormente",
+                            TipoMercaderiaId = 7
+                        },
+                        new
+                        {
+                            MercaderiaId = 21,
+                            Imagen = "https://drive.google.com/file/d/1hMYDum13KkHld5PMHp3jSTM9Oh_ExSOD/view",
                             Ingredientes = "No aplica",
                             Nombre = "Gaseosa",
                             Precio = 500,
@@ -315,32 +355,92 @@ namespace ProyectoSoftware.AccessData.Migrations
                         },
                         new
                         {
-                            MercaderiaId = 18,
-                            Imagen = "",
+                            MercaderiaId = 22,
+                            Imagen = "https://drive.google.com/file/d/1JslDFLsGxkWspmjjdnRlvAiHgXlJtOKI/view",
                             Ingredientes = "No aplica",
-                            Nombre = "Agua mineral",
+                            Nombre = "Agua saborizada",
+                            Precio = 450,
+                            Preparacion = "Ninguna",
+                            TipoMercaderiaId = 8
+                        },
+                        new
+                        {
+                            MercaderiaId = 23,
+                            Imagen = "https://drive.google.com/file/d/1LGTebh1vaG4CmJTFyJ3iz0Sfc6JGd_U2/view",
+                            Ingredientes = "No aplica",
+                            Nombre = "Agua mineral sin gas",
                             Precio = 300,
                             Preparacion = "Ninguna",
                             TipoMercaderiaId = 8
                         },
                         new
                         {
-                            MercaderiaId = 19,
-                            Imagen = "",
+                            MercaderiaId = 24,
+                            Imagen = "https://drive.google.com/file/d/1dwOplkCITA5xznlHXLVe-46OVOLI_Zvr/view",
+                            Ingredientes = "No aplica",
+                            Nombre = "Agua mineral con gas",
+                            Precio = 300,
+                            Preparacion = "Ninguna",
+                            TipoMercaderiaId = 8
+                        },
+                        new
+                        {
+                            MercaderiaId = 25,
+                            Imagen = "https://drive.google.com/file/d/1DGF9Z8OB95lkedMSXb7qAuJyWVU0DvmP/view",
                             Ingredientes = "Lúpulo, cebada, malta",
                             Nombre = "Cerveza IPA",
+                            Precio = 750,
+                            Preparacion = "Ninguna",
+                            TipoMercaderiaId = 9
+                        },
+                        new
+                        {
+                            MercaderiaId = 26,
+                            Imagen = "https://drive.google.com/file/d/1ud32oxsTAjsVbfcny0G9gwQc_8Mmsn_1/view",
+                            Ingredientes = "Lúpulo, cebada, malta, caramelo",
+                            Nombre = "Cerveza Scotish",
                             Precio = 700,
                             Preparacion = "Ninguna",
                             TipoMercaderiaId = 9
                         },
                         new
                         {
-                            MercaderiaId = 20,
-                            Imagen = "",
+                            MercaderiaId = 27,
+                            Imagen = "https://drive.google.com/file/d/17oe10vyvebzJUNPchjug88NWI85WRwJ3/view",
+                            Ingredientes = "Lúpulo, cebada, malta, cacao",
+                            Nombre = "Cerveza Stout",
+                            Precio = 750,
+                            Preparacion = "Ninguna",
+                            TipoMercaderiaId = 9
+                        },
+                        new
+                        {
+                            MercaderiaId = 28,
+                            Imagen = "https://drive.google.com/file/d/1qY-UUAqzQVBkPJ2o_ip_Wrx3MRFWVoQQ/view",
                             Ingredientes = "Leche, huevo, azúcar",
                             Nombre = "Flan",
+                            Precio = 500,
+                            Preparacion = "Se baten huevos con azúcar hasta disolver. Se calienta leche hasta el punto de hervor, se agrega la mezcla y se revuelve. En otro recipiente se prepara caramelo con azúcar y agua. El caramelo y la mezcla se cocinan a 170° en el horno a baño maría",
+                            TipoMercaderiaId = 10
+                        },
+                        new
+                        {
+                            MercaderiaId = 29,
+                            Imagen = "https://drive.google.com/file/d/15y_y2dY8brhQDwS8fMmK-5NXABSVMBc8/view",
+                            Ingredientes = "Helado de chocolate, dulce de leche, vainilla",
+                            Nombre = "Helado",
                             Precio = 600,
-                            Preparacion = "Baño María",
+                            Preparacion = "No aplica",
+                            TipoMercaderiaId = 10
+                        },
+                        new
+                        {
+                            MercaderiaId = 30,
+                            Imagen = "https://drive.google.com/file/d/1E9j4LTrFyFVluEj0h72jHXZT5MSzrWOs/view",
+                            Ingredientes = "Manzana, Naranja, Banana, Ananá, Durazno, Cereza",
+                            Nombre = "Ensalada de frutas",
+                            Precio = 400,
+                            Preparacion = "Se quita la cascara de todas las frutas a excepción de la cereza. Luego se realizan cortes pequeños que serán mezclados en un bol con jugo de frutas",
                             TipoMercaderiaId = 10
                         });
                 });
