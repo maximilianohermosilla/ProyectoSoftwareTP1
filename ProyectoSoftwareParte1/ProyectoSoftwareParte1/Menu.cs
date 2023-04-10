@@ -1,15 +1,25 @@
-﻿using ProyectoSoftware.Application.Services;
+﻿using ProyectoSoftware.AccessData;
+using ProyectoSoftware.AccessData.Queries;
+using ProyectoSoftware.Application.Services;
 using ProyectoSoftware.Domain.DTO;
 using ProyectoSoftware.Domain.Models;
 
 namespace ProyectoSoftwareParte1
 {
+
     public class Menu
     {
-        public static List<TipoMercaderia> tiposMercaderia = TipoMercaderiaService.GetAll();
-        public static List<FormaEntrega> formasEntrega = FormaEntregaService.GetAll();
+        private static ProyectoSoftwareContext _context = new ProyectoSoftwareContext();
+
+        private static TipoMercaderiaService tipoMercaderiaService = new TipoMercaderiaService(_context);
+        private static FormaEntregaService formaEntregaService = new FormaEntregaService(_context);
+        private static MercaderiaService mercaderiaService = new MercaderiaService(_context);
+        private static ComandaService comandaService = new ComandaService(_context);
+
         public static List<Mercaderia> listaMercaderia = new List<Mercaderia>();
         public static List<Mercaderia> listaProductosPedido = new List<Mercaderia>();
+        public static List<TipoMercaderia> tiposMercaderia = tipoMercaderiaService.GetAll();
+        public static List<FormaEntrega> formasEntrega = formaEntregaService.GetAll();
 
         public static void MenuPrincipal()
         {
@@ -119,7 +129,7 @@ namespace ProyectoSoftwareParte1
         public static string MenuMercaderias(int tipoMercaderia)
         {
             string opcion = "";
-            listaMercaderia = MercaderiaService.GetAllByType(tipoMercaderia);
+            listaMercaderia = mercaderiaService.GetAllByType(tipoMercaderia);
             if (listaMercaderia.Count() > 0)
             {
                 MenuCabecera("PRODUCTOS", true);
@@ -209,7 +219,7 @@ namespace ProyectoSoftwareParte1
             Console.WriteLine(@"Forma de entrega: {0}", formaEntrega.Descripcion);
             Console.WriteLine("\nPresione una tecla para continuar...");
 
-            ComandaService.Insert(listaProductosPedido, formaEntrega, precioFinal);
+            comandaService.Insert(listaProductosPedido, formaEntrega, precioFinal);
             Console.ReadLine();
             listaProductosPedido.Clear();
         }
@@ -217,7 +227,7 @@ namespace ProyectoSoftwareParte1
         public static void MenuListaPedidos()
         {
             Console.Clear();
-            List<ComandaDTO> listaComandas = ComandaService.GetAll();
+            List<ComandaDTO> listaComandas = comandaService.GetAll();
             Console.WriteLine("LISTA DE COMANDAS");
 
             if(listaComandas.Count == 0)
@@ -227,17 +237,20 @@ namespace ProyectoSoftwareParte1
 
             foreach (var item in listaComandas)
             {
-                Console.WriteLine("\n---------------------------------------------");
+                Console.WriteLine("\n_____________________________________________\n");
                 Console.WriteLine(@"Comanda: {0}", item.ComandaId);
-                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine("---------------------------------------------\n");
 
                 foreach (var mercaderia in item.ComandaMercaderia)
                 {
-                    Console.WriteLine(@"{0} ({1}) ${2}", mercaderia.Nombre, mercaderia.TipoMercaderia, mercaderia.Precio);
+                    Console.WriteLine(@"({1}) {0} - ${2}", mercaderia.Nombre, mercaderia.TipoMercaderia, mercaderia.Precio);
                 }
-
-                Console.WriteLine(@"{0}Precio Total: ${1}", "\n", item.PrecioTotal);
-                Console.WriteLine(@"Forma de entrega: {0}{1}", item.FormaEntrega, "\n");
+                Console.WriteLine("\n---------------------------------------------");
+                Console.WriteLine(@"Precio Total: ${0}", item.PrecioTotal);
+                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine(@"Forma de entrega: {0}", item.FormaEntrega);
+                Console.WriteLine("_____________________________________________\n\n");
+                Console.WriteLine("* * * * * * * * * * * * * * * * * * * * * * *");
             }
 
             Console.WriteLine("\nPresione una tecla para continuar...");

@@ -4,14 +4,17 @@ namespace ProyectoSoftware.AccessData.Queries
 {
     public class MercaderiaQuery
     {
-        public static List<Mercaderia> GetAllByType(int tipoMercaderia)
+        private ProyectoSoftwareContext context;
+        public MercaderiaQuery(ProyectoSoftwareContext _context)
         {
-            using (var context = new ProyectoSoftwareContext())
-            {
-                List<Mercaderia> lista = context.Mercaderias.Where(m => m.TipoMercaderiaId == tipoMercaderia).ToList();
+            context = _context;
+        }
 
-                return lista;
-            }
+        public List<Mercaderia> GetAllByType(int tipoMercaderia)
+        {
+            List<Mercaderia> lista = context.Mercaderias.Where(m => m.TipoMercaderiaId == tipoMercaderia).ToList();
+
+            return lista;
         }
     }
 }

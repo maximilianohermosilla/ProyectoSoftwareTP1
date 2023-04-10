@@ -1,13 +1,20 @@
-﻿using ProyectoSoftware.AccessData.Queries;
+﻿using ProyectoSoftware.AccessData;
+using ProyectoSoftware.AccessData.Queries;
 using ProyectoSoftware.Domain.Models;
 
 namespace ProyectoSoftware.Application.Services
 {
     public class FormaEntregaService
     {
-        public static List<FormaEntrega> GetAll()
+        private FormaEntregaQuery formaEntregaQuery;
+
+        public FormaEntregaService(ProyectoSoftwareContext _context)
         {
-            List<FormaEntrega> formasEntrega = FormaEntregaQuery.GetAll();
+            this.formaEntregaQuery = new FormaEntregaQuery(_context);
+        }
+        public List<FormaEntrega> GetAll()
+        {
+            List<FormaEntrega> formasEntrega = formaEntregaQuery.GetAll();
 
             return formasEntrega;
         }

@@ -1,13 +1,21 @@
-﻿using ProyectoSoftware.AccessData.Queries;
+﻿using ProyectoSoftware.AccessData;
+using ProyectoSoftware.AccessData.Queries;
 using ProyectoSoftware.Domain.Models;
 
 namespace ProyectoSoftware.Application.Services
 {
     public class TipoMercaderiaService
     {
-        public static List<TipoMercaderia> GetAll()
+        private TipoMercaderiaQuery tipoMercaderiaQuery;
+
+        public TipoMercaderiaService(ProyectoSoftwareContext _context)
         {
-            List<TipoMercaderia> tiposMercaderia = TipoMercaderiaQuery.GetAll();
+            this.tipoMercaderiaQuery = new TipoMercaderiaQuery(_context);
+        }
+
+        public List<TipoMercaderia> GetAll()
+        {
+            List<TipoMercaderia> tiposMercaderia = tipoMercaderiaQuery.GetAll();
 
             return tiposMercaderia;
         }

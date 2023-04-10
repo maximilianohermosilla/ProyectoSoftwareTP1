@@ -4,14 +4,18 @@ namespace ProyectoSoftware.AccessData.Queries
 {
     public class FormaEntregaQuery
     {
-        public static List<FormaEntrega> GetAll()
-        {
-            using (var context = new ProyectoSoftwareContext())
-            {
-                List<FormaEntrega> lista = context.FormasEntrega.ToList();
+        private ProyectoSoftwareContext context;
 
-                return lista;
-            }
+        public FormaEntregaQuery(ProyectoSoftwareContext _context)
+        {
+            context = _context;
+        }
+
+        public List<FormaEntrega> GetAll()
+        {           
+            List<FormaEntrega> lista = context.FormasEntrega.ToList();
+
+            return lista;        
         }
     }
 }
